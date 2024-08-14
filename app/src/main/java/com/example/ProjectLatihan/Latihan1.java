@@ -1,27 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+// Latihan Access modifier, non-Acces Modifier, variable
 package com.example.ProjectLatihan;
 
-/**
- *
- * @author Asus
- */
 public class Latihan1 {
     
-    public void nonStaticTest(){
+    //instance variable
+    Integer instanceVariable=10;
+    static Integer staticVariable=30;
+    
+    // non static, private modifier and synchronized
+    private synchronized void nonStaticTest(){
+        //local variable
+        Integer localVariable=20;
         System.out.println("Non static method");
     }
+    //static, public modifier
     public static void staticTest(){
         System.out.println("static method");
     }
-    // Hello world 
     public static void main(String[] args) {
-        Latihan1 helloWorldObject = new Latihan1();
+        //penggunaan variable instance
+        Latihan1 helloWorldObject1 = new Latihan1();
+        helloWorldObject1.instanceVariable=20;
+        Latihan1 helloWorldObject2 = new Latihan1();
+        helloWorldObject2.instanceVariable=40;
+        
+        //penggunaan variable static
+        Latihan1.staticVariable=100;
+        
         //printing Hello World
         System.out.println("Hello World!!");
         //Non Static Method
+        Latihan1 helloWorldObject = new Latihan1();
         helloWorldObject.nonStaticTest();
         //Static Method
         staticTest();
